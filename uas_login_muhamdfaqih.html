@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9933 0%, #ff6600 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            width: 400px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .login-container img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .login-container img:hover {
+            transform: scale(1.1);
+        }
+
+        .login-container h1 {
+            font-size: 28px;
+            color: #ff6600;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px solid #ffd1b3;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #fff5eb;
+        }
+
+        .login-container input:focus {
+            border-color: #ff9933;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.2);
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(to right, #ff9933, #ff6600);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .login-container button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-container .links {
+            margin-top: 20px;
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+        .login-container .links a {
+            color: #ff6600;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .login-container .links a:hover {
+            color: #ff9933;
+        }
+
+        .login-container p {
+            font-size: 14px;
+            color: #ff8533;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="Logo PERPUSNAS.png" alt="Logo PerpusNas" />
+        <h1>Selamat Datang</h1>
+        <form onsubmit="return login(event)">
+            <input type="text" id="username" placeholder="Masukkan Username" required />
+            <input type="password" id="password" placeholder="Masukkan Password" required />
+            <button type="submit">MASUK</button>
+        </form>
+        <div class="links">
+            <a href="#">Lupa Password?</a>
+            <a href="#">Daftar Baru</a>
+        </div>
+        <p>&copy; Arc E-Library 2025 | 241011701456</p>
+    </div>
+
+    <script>
+        function login(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username && password) {
+                window.location.href = "uas_beranda_muhamadfaqih.html";
+            } else {
+                alert('Silakan isi username dan password!');
+            }
+        }
+    </script>
+</body>
+</html>
